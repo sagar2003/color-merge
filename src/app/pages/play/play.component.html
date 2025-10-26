@@ -1,0 +1,25 @@
+<div class="bg-dark text-white vh-100 d-flex justify-content-center align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-3 d-flex justify-content-center align-items-center">
+                <h3>Score: {{score}}</h3>
+            </div>
+            <div class="col-6 d-flex justify-content-center align-items-center grid-container">
+                <div class="grid container">
+                    @for (r of rows; track $index) {
+                    <div class="row">
+                        @for (c of cols; track $index) {
+                        <div class="col cell"
+                            [class.adapting]="adaptableHoveredCell.level == cells[r][c].level && adaptableHoveredCell.row == r && adaptableHoveredCell.col == c">
+                            <app-grid-cell [row]="r" [col]="c" [level]="cells[r][c].level"
+                                (cellDropped)="onCellDrop($event)" (adaptDrop)="setAdaptCell($event)"></app-grid-cell>
+                        </div>
+                        }
+                    </div>
+                    }
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+</div>

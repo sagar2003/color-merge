@@ -1,0 +1,32 @@
+.cell {
+    width: 80px;
+    height: 80px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 2px;
+    padding: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.grid {
+    width: fit-content;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.adapting {
+  animation: glow 500ms ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 4px 2px white;
+  }
+
+  100% {
+    box-shadow: 0 0 12px 4px black;
+  }
+}
